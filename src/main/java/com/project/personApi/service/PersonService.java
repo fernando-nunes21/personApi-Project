@@ -64,6 +64,6 @@ public class PersonService {
     }
 
     private Person verifyIfExists(Integer id) throws PersonNotFound {
-        return personRepository.findById(id).orElseThrow(() -> new PersonNotFound(id.toString()));
+        return personRepository.findById(id).orElseThrow(() -> new PersonNotFound("Person not found by id = "+id));
     }
 }
